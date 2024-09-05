@@ -1,4 +1,4 @@
-[![CircleCI](https://dl.circleci.com/status-badge/img/gh/genecommerce/module-better-checkout-adyen/tree/master.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/genecommerce/module-better-checkout-adyen/tree/master)
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/genecommerce/module-better-checkout-rvvup/tree/main.svg?style=svg&circle-token=CCIPRJ_2Py4tuFAPhod1j3YxqEEqn_6ed1698f79c34f2bbb6462edbf73829fdb57f603)](https://dl.circleci.com/status-badge/redirect/gh/genecommerce/module-better-checkout-rvvup/tree/main)
 
 # Template Repo for Magento 2 Modules
 
