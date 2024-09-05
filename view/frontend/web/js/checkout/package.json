@@ -1,5 +1,5 @@
 {
-  "name": "gene-better-checkout-adyen",
+  "name": "gene-better-checkout-rvvup",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -19,7 +19,6 @@
     "eslint-plugin-vue": "^9.27.0"
   },
   "dependencies": {
-    "@adyen/adyen-web": "^5.67.0",
     "@rollup/plugin-commonjs": "^25.0.7",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-replace": "^5.0.5",

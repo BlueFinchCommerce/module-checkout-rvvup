@@ -85,7 +85,7 @@ jobs:
             composer config repositories.gene-packages '{"type": "composer", "url": "https://repo.packagist.com/gene/", "canonical": false}'
             composer config minimum-stability dev
             composer config prefer-stable true
-            composer require gene/module-better-checkout-adyen:dev-${CIRCLE_BRANCH}#${CIRCLE_SHA1} --no-interaction
+            composer require gene/module-better-checkout-rvvup:dev-${CIRCLE_BRANCH}#${CIRCLE_SHA1} --no-interaction
       - run:
           name: Install Magento
           command: |
@@ -119,7 +119,7 @@ jobs:
       - run:
           name: Install composer modules within Better Checkout
           command: |
-            composer install --working-dir=vendor/gene/module-better-checkout-adyen  --dev
+            composer install --working-dir=vendor/gene/module-better-checkout-rvvup  --dev
       - persist_to_workspace:
           root: .
           paths:
@@ -134,19 +134,19 @@ jobs:
       - run:
           name: PHPCS
           command: |
-            ./vendor/bin/phpcs vendor/gene/module-better-checkout-adyen --standard=Magento2 --ignore=vendor,*.css,Test --extensions=php --colors -s -p -v --runtime-set installed_paths vendor/magento/magento-coding-standard,vendor/magento/php-compatibility-fork
+            ./vendor/bin/phpcs vendor/gene/module-better-checkout-rvvup --standard=Magento2 --ignore=vendor,*.css,Test --extensions=php --colors -s -p -v --runtime-set installed_paths vendor/magento/magento-coding-standard,vendor/magento/php-compatibility-fork
       - run:
           name: PHPStan
-          working_directory: ./vendor/gene/module-better-checkout-adyen
+          working_directory: ./vendor/gene/module-better-checkout-rvvup
           command: ./vendor/bin/phpstan analyse . --configuration=./phpstan.neon
       - run:
           name: Configure PHPunit
-          working_directory: ./vendor/gene/module-better-checkout-adyen
+          working_directory: ./vendor/gene/module-better-checkout-rvvup
           command: |
             mkdir -p ~/phpunit
       - run:
          name: PHPUnit
-         working_directory: ./vendor/gene/module-better-checkout-adyen
+         working_directory: ./vendor/gene/module-better-checkout-rvvup
          command: ./vendor/bin/phpunit -c phpunit.xml
       - store_test_results:
           path: ~/phpunit
@@ -160,16 +160,16 @@ jobs:
           at: .
       - run:
           name: NPM install to root module
-          command: npm --prefix vendor/gene/module-better-checkout-adyen i
+          command: npm --prefix vendor/gene/module-better-checkout-rvvup i
       - run:
           name: NPM install to checkout app
-          command: npm --prefix vendor/gene/module-better-checkout-adyen/view/frontend/web/js/checkout i
+          command: npm --prefix vendor/gene/module-better-checkout-rvvup/view/frontend/web/js/checkout i
       - run:
           name: ESLint run against root module
-          command: npm --prefix vendor/gene/module-better-checkout-adyen run lint
+          command: npm --prefix vendor/gene/module-better-checkout-rvvup run lint
       - run:
           name: ESLint run against checkout app
-          command: npm --prefix vendor/gene/module-better-checkout-adyen/view/frontend/web/js/checkout run lint
+          command: npm --prefix vendor/gene/module-better-checkout-rvvup/view/frontend/web/js/checkout run lint
 workflows:
   build-test:
     jobs:

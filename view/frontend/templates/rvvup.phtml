@@ -1,0 +1,20 @@
+<?php
+/**
+ * @var \Magento\Framework\View\Element\Template $block
+ * @var \Magento\Framework\Escaper $escaper
+ * @var \Gene\BetterCheckout\ViewModel\Assets $assetViewModel
+ */
+
+$payByBank = $block->getViewFileUrl('Gene_BetterCheckoutRvvup::js/checkout/dist/components/PayByBank/PayByBank.min.js');
+$styles = $block->getViewFileUrl('Gene_BetterCheckoutRvvup::js/checkout/dist/styles.css');
+
+?>
+
+<script>
+    window.geneCheckout = window.geneCheckout || {};
+    window.geneCheckout.paymentMethods = window.geneCheckout.paymentMethods || {};
+
+    window.geneCheckout.paymentMethods.Rvvup = "<?= $escaper->escapeJs($payByBank) ?>";
+</script>
+
+<link rel="stylesheet" href="<?= $escaper->escapeHtmlAttr($styles) ?>" />
