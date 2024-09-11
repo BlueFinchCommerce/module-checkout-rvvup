@@ -17,6 +17,13 @@ iframe {
   background-color: var(--radio-input-wrapper__background-color-active);
   border: var(--selected-border, var(--radio-input-wrapper__border-weight-active) var(--base__border-style) var(--radio-input-wrapper__border-color-active));
 }
+.rvvup-method-container.processing {
+  opacity: 0.2;
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
 
 .rvvup-loader {
   background-color: white;

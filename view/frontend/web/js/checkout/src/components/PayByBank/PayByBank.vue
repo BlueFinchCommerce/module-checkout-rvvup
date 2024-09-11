@@ -3,7 +3,7 @@
     <div
       v-if="isPayByBankActive"
       class="rvvup-method-container"
-      :class="{ active: isMethodSelected }"
+      :class="{ active: isMethodSelected, processing: isProcessing }"
       @click="selectPaymentCard"
       @keydown="selectPaymentCard"
     >
@@ -46,28 +46,27 @@
             {{ $t('rvvup.payByBankButton') }}
           </span>
         </button>
-
-        <component
-          :is="Modal"
-          :visible="showPaymentModal"
-          :classes="'rvvup-modal'"
-          :header="false"
-          :footer="false"
-          @close="cancelRvvupPayment"
-        >
-          <template #body>
-            <component
-              :is="IframeComponent"
-              v-if="iframeUrl"
-              :title="'Rvvup payment modal'"
-              :width="frameWidth"
-              :height="frameHeight"
-              :src="iframeUrl"
-            />
-          </template>
-        </component>
       </div>
     </div>
+    <component
+      :is="Modal"
+      :visible="showPaymentModal"
+      :classes="'rvvup-modal'"
+      :header="false"
+      :footer="false"
+      @close="cancelRvvupPayment"
+    >
+      <template #body>
+        <component
+          :is="IframeComponent"
+          v-if="iframeUrl"
+          :title="'Rvvup payment modal'"
+          :width="frameWidth"
+          :height="frameHeight"
+          :src="iframeUrl"
+        />
+      </template>
+    </component>
   </template>
 </template>
 
@@ -100,6 +99,7 @@ export default {
       IframeComponent: null,
       Modal: null,
       icon: null,
+      isProcessing: false,
     };
   },
   computed: {
@@ -168,6 +168,10 @@ export default {
 
     this.isPayByBankActive = !!payByBank;
     this.payByBankDescriptionSrc = payByBank.summary_url;
+
+    paymentStore.paymentEmitter.on('paymentProcessing', (processing) => {
+      this.isProcessing = processing;
+    });
 
     paymentStore.paymentEmitter.on('paymentMethodSelected', ({ type }) => {
       this.isMethodSelected = type === 'rvvup_yapily';
@@ -326,6 +330,8 @@ export default {
         'stores.usePaymentStore',
       ]);
 
+      paymentStore.paymentEmitter.emit('paymentProcessing', true);
+
       loadingStore.setLoadingState(true);
 
       const data = {
@@ -340,6 +346,7 @@ export default {
           this.rvvupPaymentActions(quote.id);
         })
         .catch((error) => {
+          paymentStore.paymentEmitter.emit('paymentProcessing', false);
           /* @todo - handle errors */
           setTimeout(() => {
             paymentStore.setPaymentErrorMessage(this.$t('errorMessages.rvvupPayment.qtyNotAvailable'));
