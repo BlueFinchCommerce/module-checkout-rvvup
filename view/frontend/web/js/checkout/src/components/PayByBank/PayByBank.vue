@@ -284,6 +284,10 @@ export default {
         let message;
 
         Object.keys(result).forEach((objectKey) => {
+          if (objectKey !== 'status') {
+            return;
+          }
+
           if (result[objectKey] === 'cancelled') {
             message = this.$t('errorMessages.rvvupPayment.cancelled');
           } else if (result[objectKey] === 'unexpected') {
