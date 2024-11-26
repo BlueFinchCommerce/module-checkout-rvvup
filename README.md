@@ -1,3 +1,5 @@
+![CircleCI](https://dl.circleci.com/status-badge/img/gh/genecommerce/module-better-checkout-rvvup/tree/main.svg?style=svg&circle-token=CCIPRJ_N1JCqhHWWgbpN2D3HLFU5X_777eea46813bc2d747d939a06c3250a3c8adcdc9)
+
 ![Better Checkout Powered by GENE](./assets/logo.svg)
 
 # Better Checkout Rvvup Module
@@ -22,4 +24,25 @@ For information about a module installation in Adobe Commerce, see [Enable or di
 
 Remember to clear any appropriate caches.
 
-Once installed the module should automatically be available for use in the checkout.
+Once installed the module follows the same configuration settings as prescribed by the official rvvup integration documentation, see [Rvvup for Magento](https://help.rvvup.com/hc/en-gb/articles/13742786115217-Rvvup-for-Magento-Installation-Guide).
+
+## CircleCi
+
+CircleCi is a tool for us to use to allow for tested to be run on our modules before they are deployed.
+
+This template comes with EsLint and PHPStan.
+
+You can add more tests to this if you need to.
+
+
+### Testing your module locally
+
+You can test CircleCi before you push your code.
+
+To do this you need to install circleci locally.
+
+``` brew install circleci```
+
+Then once this has been installed in the main directory of your package then.
+
+```circleci local execute```
