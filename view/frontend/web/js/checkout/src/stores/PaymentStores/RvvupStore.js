@@ -23,7 +23,7 @@ export default defineStore('rvvupStore', {
         storeConfig {
           rvvup_payments_active
         }
-      }`, {}, {}, 'BetterCheckoutStoreConfig').then(this.handleInitialConfig).then(this.getVaultConfig);
+      }`, {}, {}, 'BetterCheckoutStoreConfigRvvup').then(this.handleInitialConfig).then(this.getVaultConfig);
 
       await this.getCachedResponse(request, 'getInitialConfig');
     },
