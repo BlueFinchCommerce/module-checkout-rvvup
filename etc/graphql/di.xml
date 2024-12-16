@@ -7,11 +7,4 @@
             </argument>
         </arguments>
     </type>
-    <virtualType name="BetterCheckoutSessionPlugin" type="Gene\BetterCheckout\Plugin\DisableSession">
-        <arguments>
-            <argument name="operationNames" xsi:type="array">
-                <item name="storeConfigRvvup" xsi:type="string">BetterCheckoutStoreConfigRvvup</item>
-            </argument>
-        </arguments>
-    </virtualType>
 </config>
