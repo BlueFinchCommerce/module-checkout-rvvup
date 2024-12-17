@@ -5,8 +5,10 @@
  * @var \Gene\BetterCheckout\ViewModel\Assets $assetViewModel
  */
 
-$payByBank = $block->getViewFileUrl('Gene_BetterCheckoutRvvup::js/checkout/dist/components/PayByBank/PayByBank.min.js');
-$styles = $block->getViewFileUrl('Gene_BetterCheckoutRvvup::js/checkout/dist/styles.css');
+$assetViewModel = $block->getAssetViewModel();
+
+$payByBank = $assetViewModel->getDistViewFileUrl('Gene_BetterCheckoutRvvup::js/checkout/dist/components/PayByBank/PayByBank.min.js');
+$styles = $assetViewModel->getDistViewFileUrl('Gene_BetterCheckoutRvvup::js/checkout/dist/styles.css');
 
 ?>
 
