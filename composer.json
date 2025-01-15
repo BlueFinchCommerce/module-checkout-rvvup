@@ -1,5 +1,5 @@
 {
-  "name": "gene/module-better-checkout-rvvup",
+  "name": "bluefinch/module-checkout-rvvup",
   "description": "",
   "type": "magento2-module",
   "autoload": {
@@ -7,12 +7,12 @@
       "registration.php"
     ],
     "psr-4": {
-      "Gene\\BetterCheckoutRvvup\\": ""
+      "BlueFinch\\CheckoutRvvup\\": ""
     }
   },
   "require": {
     "magento/framework": "*",
-    "gene/module-better-checkout": "^1.0"
+    "bluefinch/module-checkout": "^1.0"
   },
   "require-dev": {
     "magento/magento-coding-standard": "*",
@@ -29,7 +29,7 @@
       },
       "1": {
           "type": "composer",
-          "url": "https://repo.packagist.com/gene/"
+          "url": "https://repo.packagist.com/bluefinch/"
       }
   },
   "authors": [

@@ -2,10 +2,10 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <!-- Add Better Checkout -->
-        <referenceContainer name="gene.better.checkout.container">
-            <block name="gene.better.checkout.rvvup" template="Gene_BetterCheckoutRvvup::rvvup.phtml" after="-">
+        <referenceContainer name="bluefinch.checkout.container">
+            <block name="bluefinch.checkout.rvvup" template="BlueFinch_CheckoutRvvup::rvvup.phtml" after="-">
                 <arguments>
-                    <argument name="asset_view_model" xsi:type="object">Gene\BetterCheckout\ViewModel\Assets</argument>
+                    <argument name="asset_view_model" xsi:type="object">BlueFinch\Checkout\ViewModel\Assets</argument>
                 </arguments>
             </block>
         </referenceContainer>

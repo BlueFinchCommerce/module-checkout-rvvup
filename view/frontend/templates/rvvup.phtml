@@ -2,21 +2,21 @@
 /**
  * @var \Magento\Framework\View\Element\Template $block
  * @var \Magento\Framework\Escaper $escaper
- * @var \Gene\BetterCheckout\ViewModel\Assets $assetViewModel
+ * @var \BlueFinch\Checkout\ViewModel\Assets $assetViewModel
  */
 
 $assetViewModel = $block->getAssetViewModel();
 
-$payByBank = $assetViewModel->getDistViewFileUrl('Gene_BetterCheckoutRvvup::js/checkout/dist/components/PayByBank/PayByBank.min.js');
-$styles = $assetViewModel->getDistViewFileUrl('Gene_BetterCheckoutRvvup::js/checkout/dist/styles.css');
+$payByBank = $assetViewModel->getDistViewFileUrl('BlueFinch_CheckoutRvvup::js/checkout/dist/components/PayByBank/PayByBank.min.js');
+$styles = $assetViewModel->getDistViewFileUrl('BlueFinch_CheckoutRvvup::js/checkout/dist/styles.css');
 
 ?>
 
 <script>
-    window.geneCheckout = window.geneCheckout || {};
-    window.geneCheckout.paymentMethods = window.geneCheckout.paymentMethods || {};
+    window.bluefinchCheckout = window.bluefinchCheckout || {};
+    window.bluefinchCheckout.paymentMethods = window.bluefinchCheckout.paymentMethods || {};
 
-    window.geneCheckout.paymentMethods.Rvvup = "<?= $escaper->escapeJs($payByBank) ?>";
+    window.bluefinchCheckout.paymentMethods.Rvvup = "<?= $escaper->escapeJs($payByBank) ?>";
 </script>
 
 <link rel="stylesheet" href="<?= $escaper->escapeHtmlAttr($styles) ?>" />
