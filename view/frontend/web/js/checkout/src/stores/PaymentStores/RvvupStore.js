@@ -23,7 +23,7 @@ export default defineStore('rvvupStore', {
         storeConfig {
           rvvup_payments_active
         }
-      }`, {}, {}, 'BetterCheckoutStoreConfigRvvup').then(this.handleInitialConfig).then(this.getVaultConfig);
+      }`, {}, {}, 'BlueFinchCheckoutStoreConfigRvvup').then(this.handleInitialConfig).then(this.getVaultConfig);
 
       await this.getCachedResponse(request, 'getInitialConfig');
     },

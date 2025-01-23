@@ -9,7 +9,7 @@
     >
       <button
         class="rvvup-button payment-method"
-        :aria-label="$t('rvvup.rvvupPaymentLabel')"
+        aria-label="Rvvup Pay By Bank"
         type="button"
       >
         <span
@@ -19,7 +19,7 @@
         />
         <div class="payment-method-name">
           <span>
-            {{ $t('rvvup.payByBankLabel') }}
+            Pay by Bank
           </span>
           <div v-html="icon" />
         </div>
@@ -43,7 +43,7 @@
           @click="startRvvupPayment"
         >
           <span>
-            {{ $t('rvvup.payByBankButton') }}
+            Continue to Pay by Bank with Rvvup
           </span>
         </button>
       </div>
@@ -289,17 +289,17 @@ export default {
           }
 
           if (result[objectKey] === 'cancelled') {
-            message = this.$t('errorMessages.rvvupPayment.cancelled');
+            message = 'Payment Cancelled.';
           } else if (result[objectKey] === 'unexpected') {
-            message = this.$t('errorMessages.rvvupPayment.unexpected');
+            message = 'An error occurred while processing your payment. Please contact us.';
           } else if (result[objectKey] === 'declined') {
-            message = this.$t('errorMessages.rvvupPayment.declined');
+            message = 'Payment Declined.';
           } else if (result[objectKey] === 'expired') {
-            message = this.$t('errorMessages.rvvupPayment.expired');
+            message = 'Payment Expired.';
           } else if (result[objectKey] === 'failed') {
-            message = this.$t('errorMessages.rvvupPayment.failed');
+            message = 'Payment Failed.';
           } else {
-            message = this.$t('errorMessages.rvvupPayment.other');
+            message = 'An error occurred while processing your payment. Please contact us.';
           }
         });
 
@@ -353,7 +353,7 @@ export default {
           paymentStore.paymentEmitter.emit('paymentProcessing', false);
           /* @todo - handle errors */
           setTimeout(() => {
-            paymentStore.setPaymentErrorMessage(this.$t('errorMessages.rvvupPayment.qtyNotAvailable'));
+            paymentStore.setPaymentErrorMessage('The requested qty is not available.');
             this.isMethodSelected = false;
             throw Error(error);
           }, 5000);
@@ -410,4 +410,5 @@ export default {
 
 <style lang="scss" scoped>
 @import "./PayByBankStyles.scss";
+@import "../../styles/_core.scss";
 </style>
