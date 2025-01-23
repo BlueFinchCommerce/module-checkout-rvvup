@@ -1,4 +1,4 @@
-[![CircleCI](https://dl.circleci.com/status-badge/img/gh/bluefinchcommerce/module-better-checkout-rvvup/tree/main.svg?style=svg&circle-token=CCIPRJ_N1JCqhHWWgbpN2D3HLFU5X_777eea46813bc2d747d939a06c3250a3c8adcdc9)](https://dl.circleci.com/status-badge/redirect/gh/bluefinchcommerce/module-checkout-rvvup/tree/main)
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/bluefinchcommerce/module-checkout-rvvup/tree/main.svg?style=svg&circle-token=CCIPRJ_N1JCqhHWWgbpN2D3HLFU5X_777eea46813bc2d747d939a06c3250a3c8adcdc9)](https://dl.circleci.com/status-badge/redirect/gh/bluefinchcommerce/module-checkout-rvvup/tree/main)
 
 ![Checkout Powered by BlueFinch](./assets/logo.svg)
 
@@ -16,7 +16,7 @@ Ensure you have installed the latest version of BlueFinch Checkout, which can be
 
 To install the Checkout Rvvup module, run the following command in your Magento 2 root directory:
 
-``` composer require bluefinch/module-checkout-rvvup:^1.0 ```
+``` composer require bluefinch/module-checkout-rvvup ```
 
 Checkout Rvvup follows the standard installation process for Adobe Commerce.
 
