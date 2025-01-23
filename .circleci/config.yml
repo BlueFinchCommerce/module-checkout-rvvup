@@ -123,6 +123,7 @@ jobs:
             composer install --no-interaction
       - run:
           name: PHPCS
+          working_directory: ~/magento2/vendor/bluefinchcommerce/module-checkout-rvvup
           command: |
             ./vendor/bin/phpcs . --standard=Magento2 --ignore=vendor,*.css,Test --extensions=php --colors -s -p -v --runtime-set installed_paths vendor/magento/magento-coding-standard,vendor/magento/php-compatibility-fork
       - run:
