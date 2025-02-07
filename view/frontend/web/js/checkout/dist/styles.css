@@ -53,8 +53,6 @@
 
 .rvvup-modal {
   width: 100%;
-  bottom: 0;
-  top: auto;
   height: fit-content;
   max-height: 80%;
   transition: all 0.5s;
@@ -65,8 +63,8 @@
 @media screen and (min-width: 768px) {
   .rvvup-modal {
     transform: translateY(-50%);
-    top: 50%;
-    bottom: auto;
-    max-width: 550px;
+    top: 50% !important;
+    bottom: auto !important;
+    max-width: 550px !important;
   }
 }
