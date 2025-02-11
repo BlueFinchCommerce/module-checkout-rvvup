@@ -6,6 +6,7 @@
 
   .modal-body {
     padding: 0;
+    max-height: none !important;
   }
 
   @media screen and (min-width: 768px) {
