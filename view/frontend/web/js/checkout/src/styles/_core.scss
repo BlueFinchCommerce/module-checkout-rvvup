@@ -1,0 +1,18 @@
+.rvvup-modal {
+  width: 100%;
+  height: fit-content;
+  max-height: 80%;
+  transition: all .5s;
+
+  .modal-body {
+    padding: 0;
+    max-height: none !important;
+  }
+
+  @media screen and (min-width: 768px) {
+    transform: translateY(-50%);
+    top: 50% !important;
+    bottom: auto !important;
+    max-width: 550px !important;
+  }
+}

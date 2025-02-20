@@ -1,5 +1,5 @@
 {
-  "name": "gene/module-better-checkout-rvvup",
+  "name": "bluefinchcommerce/module-checkout-rvvup",
   "description": "",
   "type": "magento2-module",
   "autoload": {
@@ -7,12 +7,12 @@
       "registration.php"
     ],
     "psr-4": {
-      "Gene\\BetterCheckoutRvvup\\": ""
+      "BlueFinch\\CheckoutRvvup\\": ""
     }
   },
   "require": {
     "magento/framework": "*",
-    "gene/module-better-checkout": "^1.0"
+    "bluefinchcommerce/module-checkout": "^1.0"
   },
   "require-dev": {
     "magento/magento-coding-standard": "*",
@@ -23,14 +23,14 @@
     "dealerdirect/phpcodesniffer-composer-installer": "^1.0"
   },
   "repositories": {
-      "0": {
-          "type": "composer",
-          "url": "https://repo.magento.com/"
-      },
-      "1": {
-          "type": "composer",
-          "url": "https://repo.packagist.com/gene/"
-      }
+    "magento": {
+      "type": "composer",
+      "url": "https://mirror.mage-os.org/"
+    },
+    "checkout": {
+      "type": "git",
+      "url": "https://github.com/BlueFinchCommerce/module-checkout"
+    }
   },
   "authors": [
     {
